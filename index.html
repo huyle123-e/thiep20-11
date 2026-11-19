@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tri Ân Ngày Nhà Giáo Việt Nam 20/11</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'playfair': ['"Playfair Display"', 'serif'],
+                        'inter': ['Inter', 'sans-serif'],
+                        'dancing': ['"Dancing Script"', 'cursive'],
+                    },
+                    colors: {
+                        'primary': '#9f1239', // Rose 800
+                        'secondary': '#d97706', // Amber 600
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden; 
+        }
+        
+        .bounce-arrow {
+            animation: bounce-down 2s infinite;
+        }
+
+        @keyframes bounce-down {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-20px); }
+            60% { transform: translateY(-10px); }
+        }
+
+        .petal {
+            position: fixed;
+            top: -10%;
+            z-index: 0; 
+            pointer-events: none; 
+            width: 15px;
+            height: 15px;
+            border-radius: 15px 0 15px 0; 
+            opacity: 0.6;
+            animation: fall linear forwards;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-10vh) rotate(0deg) translateX(0);
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(110vh) rotate(360deg) translateX(100px);
+                opacity: 0.2;
+            }
+        }
+        
+        section {
+            z-index: 10;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-b from-orange-50 via-rose-50 to-blue-50 text-gray-800 relative">
+
+    <!--CÁNH HOA -->
+    <div id="flower-container" class="fixed inset-0 pointer-events-none z-0"></div>
+
+    <!-- PHẦN 1: HEADER -->
+    <section id="top" class="relative w-full h-screen flex flex-col items-center justify-center px-6 text-center z-10 overflow-hidden">
+        
+        <!-- LỚP ẢNH NỀN MỜ + LỚP PHỦ LÀM NỔI CHỮ -->
+        <div class="absolute inset-0 z-0 pointer-events-none">
+            <img 
+                src="image/anh-nen.jpg" 
+                alt="Ảnh nền kỷ niệm" 
+                class="w-full h-full object-cover blur-[1px] scale-105 opacity-60"
+            >
+            <div class="absolute inset-0 bg-gradient-to-b from-orange-50/60 via-rose-50/40 to-orange-50/95"></div>
+        </div>
+
+        <!-- CHỮ 9B NỔI -->
+        <div class="absolute top-6 left-6 md:top-10 md:left-10 z-20 select-none">
+            <span class="font-playfair text-5xl md:text-7xl font-extrabold text-primary tracking-wider drop-shadow-[3px_4px_0px_rgba(217,119,6,0.4)] hover:scale-110 transition-transform duration-300 inline-block">
+                9B
+            </span>
+        </div>
+
+        <!-- NỘI DUNG CHÍNH -->
+        <div data-aos="zoom-in" data-aos-duration="1500" class="max-w-4xl relative z-10">
+            <h2 class="font-dancing text-3xl md:text-5xl text-secondary mb-4 drop-shadow-sm">
+                Kỷ niệm ngày nhà giáo Việt Nam 20/11
+            </h2>
+            <h1 class="font-playfair text-4xl md:text-6xl lg:text-7xl font-bold text-primary leading-tight mb-8 drop-shadow-sm">
+                "Dưới ánh sáng mặt trời,<br class="hidden md:block"> không có nghề nào cao quý hơn nghề dạy học."
+            </h1>
+            <p class="text-gray-700 italic text-lg md:text-xl font-playfair font-medium">— Comenius —</p>
+        </div>
+
+        <!-- MŨI TÊN CHỈ XUỐNG -->
+        <a href="#middle" class="absolute bottom-10 bounce-arrow text-primary opacity-70 hover:opacity-100 transition-opacity z-10">
+            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+        </a>
+    </section>
+
+    <!-- PHẦN 2: 6 ẢNH KỶ NIỆM (Grid 3x3) -->
+    <!-- PHẦN 2: KHUNG 6 ẢNH KỶ NIỆM + 2 MEME HAI BÊN -->
+    <section id="middle" style="z-index: auto;" class="w-full min-h-screen flex flex-col items-center justify-center py-20 px-4 lg:px-32 xl:px-48 relative">
+
+        <!-- Thẻ bọc ngoài KHÔNG có backdrop-blur hay data-aos -->
+        <div class="relative w-full max-w-4xl mx-auto">
+
+            <!-- MEME BÊN TRÁI -->
+            <img 
+                src="image/meme-trai.png" 
+                alt="Meme trái" 
+                class="hidden lg:block absolute -left-28 xl:-left-44 top-[58%] -translate-y-1/2 w-40 xl:w-56 mix-blend-multiply pointer-events-none select-none z-30"
+            >
+
+            <!-- MEME BÊN PHẢI -->
+            <img 
+                src="image/meme-phai.png" 
+                alt="Meme phải" 
+                class="hidden lg:block absolute -right-28 xl:-right-44 top-[58%] -translate-y-1/2 w-40 xl:w-56 mix-blend-multiply pointer-events-none select-none z-30"
+            >
+            <!-- 4 ẢNH MINI CỠ LỚN HƠN DỌC 2 BÊN VIỀN KHUNG -->
+            <!-- Bên trái phía trên -->
+            <div class="hidden lg:block absolute top-20 -left-20 xl:-left-28 w-36 xl:w-44 bg-white p-2 pb-6 rounded-sm shadow-lg border border-gray-100 transform -rotate-12 hover:rotate-0 hover:scale-115 hover:z-40 transition-all duration-300 z-20 cursor-pointer">
+                <img src="image/anh-goc-1.jpg" alt="Ảnh góc 1" class="w-full aspect-square object-cover rounded-xs">
+            </div>
+
+            <!-- Bên phải phía trên -->
+            <div class="hidden lg:block absolute top-24 -right-20 xl:-right-28 w-36 xl:w-44 bg-white p-2 pb-6 rounded-sm shadow-lg border border-gray-100 transform rotate-12 hover:rotate-0 hover:scale-115 hover:z-40 transition-all duration-300 z-20 cursor-pointer">
+                <img src="image/anh-goc-2.jpg" alt="Ảnh góc 2" class="w-full aspect-square object-cover rounded-xs">
+            </div>
+
+            <!-- Bên trái phía dưới -->
+            <div class="hidden lg:block absolute bottom-20 -left-20 xl:-left-28 w-36 xl:w-44 bg-white p-2 pb-6 rounded-sm shadow-lg border border-gray-100 transform rotate-6 hover:rotate-0 hover:scale-115 hover:z-40 transition-all duration-300 z-20 cursor-pointer">
+                <img src="image/anh-goc-3.jpg" alt="Ảnh góc 3" class="w-full aspect-square object-cover rounded-xs">
+            </div>
+
+            <!-- Bên phải phía dưới -->
+            <div class="hidden lg:block absolute bottom-24 -right-20 xl:-right-28 w-36 xl:w-44 bg-white p-2 pb-6 rounded-sm shadow-lg border border-gray-100 transform -rotate-6 hover:rotate-0 hover:scale-115 hover:z-40 transition-all duration-300 z-20 cursor-pointer">
+                <img src="image/anh-goc-4.jpg" alt="Ảnh góc 4" class="w-full aspect-square object-cover rounded-xs">
+            </div>
+
+            <!-- KHUNG LỚN BAO QUANH TOÀN BỘ ẢNH -->
+            <div data-aos="fade-up" data-aos-duration="1000" class="relative w-full bg-white/65 backdrop-blur-md border-2 border-rose-200/80 rounded-3xl p-6 md:p-10 shadow-xl z-10">
+
+            <!-- TIÊU ĐỀ TRONG KHUNG -->
+            <h3 class="font-playfair text-3xl md:text-4xl text-primary font-bold mb-8 text-center drop-shadow-sm">
+                Những Kỷ Niệm Khó Phai
+            </h3>
+
+            <!-- LƯỚI 6 ẢNH -->
+            <div class="w-full grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 relative z-10">
+                
+                <!-- ẢNH 1 (Ảnh chính lớn) -->
+                <div class="col-span-2 row-span-2 bg-white/95 p-3 pb-10 md:pb-14 rounded-sm shadow-lg transform rotate-1 hover:rotate-0 hover:scale-[1.02] hover:z-20 transition-all duration-300 ease-out border border-gray-100 flex flex-col relative">
+                    <img 
+                        src="image/anh1.jpg" 
+                        alt="Ảnh kỷ niệm lớn" 
+                        class="w-full h-full object-cover rounded shadow-inner aspect-[4/3] md:aspect-square"
+                    >
+                    <div class="text-center mt-4 font-dancing text-2xl md:text-3xl text-gray-700">
+                        Khoảnh khắc đáng nhớ lớp 9B
+                    </div>
+                </div>
+
+                <!-- ẢNH 2 -->
+                <div class="col-span-1 bg-white/95 p-2 pb-8 md:pb-10 rounded-sm shadow-md transform -rotate-2 hover:rotate-0 hover:scale-110 hover:z-20 transition-all duration-300 ease-out border border-gray-100">
+                    <img src="image/anh2.jpg" alt="Ảnh 1" class="w-full h-full object-cover rounded shadow-inner aspect-square">
+                </div>
+
+                <!-- ẢNH 3 -->
+                <div class="col-span-1 bg-white/95 p-2 pb-8 md:pb-10 rounded-sm shadow-md transform rotate-3 hover:rotate-0 hover:scale-110 hover:z-20 transition-all duration-300 ease-out border border-gray-100">
+                    <img src="image/anh3.jpg" alt="Ảnh 2" class="w-full h-full object-cover rounded shadow-inner aspect-square">
+                </div>
+
+                <!-- ẢNH 4 -->
+                <div class="col-span-1 bg-white/95 p-2 pb-8 md:pb-10 rounded-sm shadow-md transform -rotate-1 hover:rotate-0 hover:scale-110 hover:z-20 transition-all duration-300 ease-out border border-gray-100">
+                    <img src="image/anh4.jpg" alt="Ảnh 3" class="w-full h-full object-cover rounded shadow-inner aspect-square">
+                </div>
+
+                <!-- ẢNH 5 -->
+                <div class="col-span-1 bg-white/95 p-2 pb-8 md:pb-10 rounded-sm shadow-md transform rotate-2 hover:rotate-0 hover:scale-110 hover:z-20 transition-all duration-300 ease-out border border-gray-100">
+                    <img src="image/anh5.jpg" alt="Ảnh 4" class="w-full h-full object-cover rounded shadow-inner aspect-square">
+                </div>
+
+                <!-- ẢNH 6 -->
+                <div class="col-span-2 lg:col-span-1 bg-white/95 p-2 pb-8 md:pb-10 rounded-sm shadow-md transform -rotate-2 hover:rotate-0 hover:scale-110 hover:z-20 transition-all duration-300 ease-out border border-gray-100">
+                    <img src="image/anh6.jpg" alt="Ảnh 5" class="w-full h-full object-cover rounded shadow-inner aspect-[2/1] lg:aspect-square">
+                </div>
+
+            </div> <!-- Hết lưới 6 ảnh -->
+
+            <!-- DẤU 3 CHẤM NẰM CHÍNH GIỮA DƯỚI KHUNG -->
+            <a href="#bottom" class="mt-10 flex items-center justify-center gap-3 group" title="Xem tiếp bên dưới">
+                <span class="w-2.5 h-2.5 rounded-full bg-primary/60 group-hover:bg-primary animate-bounce" style="animation-delay: 0s;"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-primary/60 group-hover:bg-primary animate-bounce" style="animation-delay: 0.15s;"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-primary/60 group-hover:bg-primary animate-bounce" style="animation-delay: 0.3s;"></span>
+            </a>
+
+        </div> <!-- Hết khung lớn -->
+
+    </section>
+
+    <!-- PHẦN 3: LỜI TRI ÂN & CHỮ KÝ MỚI -->
+    <section id="bottom" class="w-full min-h-screen flex flex-col items-center justify-center py-20 px-6 text-center relative bg-white/40 backdrop-blur-sm border-t border-white/50 z-10">
+       <div data-aos="fade-up" data-aos-duration="1000" class="relative max-w-3xl bg-white/70 backdrop-blur-md p-8 md:p-14 rounded-3xl shadow-xl border border-white">
+            
+            <!-- ẢNH GÓC TRÊN TRÁI -->
+            <div class="hidden md:block absolute -top-6 -left-6 w-36 lg:w-44 bg-white p-1.5 pb-5 rounded-sm shadow-lg border border-gray-100 transform -rotate-6 hover:rotate-0 hover:scale-110 hover:z-30 transition-all duration-300 z-20">
+                <img src="image/anh-goc-01.jpg" alt="Ảnh kỷ niệm trái" class="w-full aspect-[4/3] object-cover rounded-xs">
+            </div>
+
+            <!-- ẢNH GÓC TRÊN PHẢI -->
+            <div class="hidden md:block absolute -top-6 -right-6 w-36 lg:w-44 bg-white p-1.5 pb-5 rounded-sm shadow-lg border border-gray-100 transform rotate-6 hover:rotate-0 hover:scale-110 hover:z-30 transition-all duration-300 z-20">
+                <img src="image/anh-goc-02.jpg" alt="Ảnh kỷ niệm phải" class="w-full aspect-[4/3] object-cover rounded-xs">
+            </div>
+       
+        <div data-aos="fade-up" data-aos-duration="1000" class="max-w-3xl bg-white/70 backdrop-blur-md p-8 md:p-14 rounded-3xl shadow-xl border border-white">
+            
+            <div class="w-16 h-16 bg-rose-100 text-primary rounded-full flex items-center justify-center mx-auto mb-6 shadow-sm">
+                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                </svg>
+            </div>
+
+            <h3 class="font-playfair text-3xl md:text-4xl text-primary font-bold mb-6">
+                Lời Tri Ân 
+            </h3>
+            
+            <p class="text-gray-700 text-lg md:text-xl leading-relaxed mb-8 font-light">
+                Nhân ngày 20/11, em kính chúc cô luôn mạnh khỏe, an vui và mãi là người cô đáng kính trong lòng các thế hệ học trò.
+            </p>
+            
+            <div class="w-24 h-[2px] bg-gradient-to-r from-transparent via-primary to-transparent mx-auto mb-8"></div>
+            
+            <!-- CHỮ KÝ ĐƯỢC LÀM MƯỢT -->
+            <div class="flex flex-col items-center">
+                <p class="font-playfair text-xl md:text-2xl text-primary font-medium italic mb-6">
+                    Kính chúc cô một ngày Nhà Giáo Việt Nam thật ý nghĩa!
+                </p>
+                
+                
+                <!-- Sử dụng phông Playfair, in hoa, và giãn khoảng cách chữ (tracking-[0.3em]) -->
+                <p class="font-playfair text-[#3E2C23] text-lg md:text-xl font-bold tracking-[0.3em] uppercase mt-2">
+                    Lê Trí Huy <span class="mx-2 text-primary text-sm">✦</span> 9B
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Thư viện AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- SCRIPT HIỆU ỨNG HOA RƠI -->
+    <script>
+        AOS.init({
+            offset: 100,
+            duration: 800,
+            easing: 'ease-in-out-sine',
+            once: false,
+            mirror: true
+        });
+
+        const flowerContainer = document.getElementById('flower-container');
+        const colors = ['#fda4af', '#fecdd3', '#fbcfe8', '#ffedd5'];
+
+        function createPetal() {
+            const petal = document.createElement('div');
+            petal.classList.add('petal');
+          
+            petal.style.left = Math.random() * 100 + 'vw';
+            
+            const size = Math.random() * 8 + 10;
+            petal.style.width = size + 'px';
+            petal.style.height = size + 'px';
+            
+            petal.style.animationDuration = Math.random() * 4 + 5 + 's';
+            petal.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+            
+            flowerContainer.appendChild(petal);
+            
+            setTimeout(() => {
+                petal.remove();
+            }, 9000);
+        }
+
+        setInterval(createPetal, 400);
+    </script>
+</body>
+</html>
